@@ -9,8 +9,14 @@
         = link_to 'groups/new' do
           グループを探す
     .header-registration
-      .header-registration__left ログイン
-      .header-registration__right 登録
+      - if user_signed_in?
+        %h4
+          メールアドレス： #{current_user.email}
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      - else
+        %h2 現在ログインしていません
+        = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
+        = link_to "新規登録", new_user_registration_path, class: 'header-registration__right'
   .main-top
     .main-top__image
       = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg"
