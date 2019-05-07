@@ -1,0 +1,44 @@
+.search-main{
+  margin-top: 0;
+  background-color:#eeeeee;
+  &__menu{
+    text-align: center;
+  }
+  &__content{
+    display:flex;
+    justify-content:center;
+  }
+}
+.search-result{
+  margin:30px auto;
+  width:calc(100% - 300px);
+  background-color: antiquewhite;
+  border-radius: 10px;
+  &__conteiner{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    &__image{
+      margin-left: 20px;
+      padding-top: 7px;
+    }
+    &__info{
+      display:flex;
+      flex-direction: row;
+      font-size:20px;
+      &__name{
+        margin-right: 10px;
+      }
+      &__mf{
+        margin-right: 10px;
+      }
+      &__age{
+        margin-right: 10px;
+      }
+      &__address{}
+    }
+    &__message{
+      margin-right: 20px;
+    }
+  }
+}
