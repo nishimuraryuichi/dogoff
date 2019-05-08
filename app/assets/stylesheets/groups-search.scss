@@ -1,12 +1,24 @@
 .search-main{
   margin-top: 0;
   background-color:#eeeeee;
+  padding:12px 0;
   &__menu{
     text-align: center;
   }
   &__content{
     display:flex;
     justify-content:center;
+    &__btn{
+      background-color: white;
+      border-radius: 50px;
+      margin:0 0 3px 10px;
+      padding:0 10px;
+      .search-main-search{
+        text-decoration: none;
+        color:black;
+        font-size: 14px;
+      }
+    }
   }
 }
 .search-result{
@@ -40,5 +52,16 @@
     &__message{
       margin-right: 20px;
     }
+  }
+}
+.title-link{
+  font-size:40px;
+  .title-name{
+    background-color: #663300;
+    text-decoration: none;
+    color:white;
+    padding:7px;
+    border-radius: 30px;
+    position: fixed;
   }
 }

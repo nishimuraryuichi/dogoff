@@ -1,18 +1,17 @@
 .index-main
   .main-conteiner
     .header-content
-      .header-content__title DogOFF
+      .header-content__title
+        = link_to 'DogOFF',root_path,class: 'title-name'
       .header-content__left
-        = link_to '/groups/1/search' do
-          近くのお友達を探す
+        = link_to '近くのお友達を探す','/groups/1/search',class: 'left-text'
       .header-content__right
-        = link_to 'groups/new' do
-          グループを探す
+        = link_to 'グループを探す','groups/new',class: 'right-text' 
     .header-registration
       - if user_signed_in?
         %h4
           メールアドレス： #{current_user.email}
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'roguauto'
       - else
         %h2 現在ログインしていません
         = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
@@ -28,7 +27,7 @@
         .main-top__bottom__content__city 市町村
         %input.main-top__bottom__content__dog{type: "text",placeholder: '犬種'} 
         .main-top__bottom__content__btn
-          = link_to '検索',root_path
+          = link_to '検索',root_path,class: 'main-search'
   .main-middle
     .main-middle__title ワンちゃんの友達が見つかる
     .main-middle__content 説明です説明です説明です
