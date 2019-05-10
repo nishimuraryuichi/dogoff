@@ -1,69 +1,67 @@
-.index-main{
-  .main-conteiner{
-    background-color:#ccffcc;
-    .header-content{
-      display:flex;
-      justify-content:flex-start;
-      line-height: 50px;
-      &__title{
-        font-size:30px;
-        margin:0 20px;
-      }
-      &__left{}
-      &__right{}
-    }
-    .header-registration{
-      display:flex;
-      justify-content:flex-end;
-      &__left{
-        padding-right:20px;
-      }
-      &__right{
-        padding-right:20px;
+.groups-main{
+  margin-top: 0;
+  background-color:#eeeeee;
+  padding:12px 0;
+  &__menu{
+    text-align: center;
+  }
+  &__content{
+    display:flex;
+    justify-content:center;
+    &__btn{
+      background-color: white;
+      border-radius: 50px;
+      margin:0 0 3px 10px;
+      padding:0 10px;
+      .groups-main-search{
+        text-decoration: none;
+        color:black;
+        font-size: 14px;
       }
     }
   }
-  .main-top{
+}
+.groups-result{
+  margin:30px auto;
+  width:calc(100% - 300px);
+  background-color: antiquewhite;
+  border-radius: 10px;
+  &__conteiner{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
     &__image{
-      text-align:center;
-      position: relative;
-      p{
-        position: absolute;
-        top:50px;
-        left:240px;
-        color:white;
-        font-size:27px;
-      }
+      margin-left: 20px;
+      padding-top: 7px;
     }
-    &__bottom{
-      margin-top: 0;
-      background-color:#eeeeee;
-      &__menu{
-        text-align: center;
+    &__info{
+      display:flex;
+      flex-direction: row;
+      font-size:20px;
+      &__name{
+        margin-right: 10px;
       }
-      &__content{
-        display:flex;
-        justify-content:center;
+      &__address{
+        margin-right: 10px;
       }
+      &__type{
+        margin-right: 10px;
+      }
+      &__gender{}
+    }
+    &__new{
+      margin-right: 20px;
     }
   }
-  .main-middle{
-    text-align:center;
-
-    &__title{}
-    &__content{}
-    &__image{}
-  }
-  .main-bottom{
-    background-color:#ffffcc;
-    text-align:center;
-    &__title{}
-    &__roguin{}
-    &__address{}
-    &__owner{}
-    &__dog{}
-  }
-  .main-footer{
-    background-color:green;
+}
+.title-link{
+  font-size:40px;
+  .title-name{
+    background-color: #663300;
+    text-decoration: none;
+    color:white;
+    padding:7px;
+    border-radius: 30px;
+    position: fixed;
   }
 }
