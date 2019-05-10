@@ -1,37 +1,20 @@
-.index-main
-  .main-conteiner
-    .header-content
-      .header-content__title DogOFF
-      .header-content__left
-        = link_to '/groups/1/search' do
-          近くのお友達を探す
-      .header-content__right
-        = link_to 'groups/new' do
-          グループを探す
-    .header-registration
-      .header-registration__left ログイン
-      .header-registration__right 登録
-  .main-top
-    .main-top__image
-      = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg"
-      %p もっと豊かな生活に
-    .main-top__bottom
-      .main-top__bottom__menu 探す
-      .main-top__bottom__content
-        .main-top__bottom__content__prefecture 都道府県
-        .main-top__bottom__content__city 市町村
-        %input.main-top__bottom__content__dog{type: "text",placeholder: '犬種'} 
-        .main-top__bottom__content__btn
-          = link_to '検索',root_path
-  .main-middle
-    .main-middle__title ワンちゃんの友達が見つかる
-    .main-middle__content 説明です説明です説明です
-    .main-middle__image 画像
-  .main-bottom
-    .main-bottom__title 登録方法
-    .main-bottom__roguin メールアドレス
-    .main-bottom__address 住所
-    .main-bottom__owner 飼い主
-    .main-bottom__dog ワンちゃん
-  .main-footer
-    .main-footer 仮
+.title-link
+  = link_to 'DogOFF',root_path,class: 'title-name'
+.groups-main
+  .groups-main__menu グループを探す
+  .groups-main__content
+    .groups-main__content__prefecture 都道府県
+    .groups-main__contentt__city 市町村
+    %input.groups-main__content__dog{type: "text",placeholder: '犬種'} 
+    .groups-main__content__btn
+      = link_to '検索',root_path,class: 'groups-main-search'
+.groups-result
+  .groups-result__conteiner
+    .groups-result__conteiner__image
+      = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg",size: '100x100'
+    .groups-result__conteiner__info
+      .groups-result__conteiner__info__name ボーダーコリー会
+      .groups-result__conteiner__info__address 尼崎市
+      .groups-result__conteiner__info__type ボーダーコリー
+      .groups-result__conteiner__inf__gender 女性限定
+    .groups-result__conteiner__new グループに入る
