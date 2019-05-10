@@ -1,6 +1,6 @@
 class AddcaramuTousers < ActiveRecord::Migration[5.2]
   def change
-    t.string :sex, null: false
-    t.string :age, null: false
+    add_column :users, :sex, :string, :null => false
+    add_column :users, :age, :integer, :null => false
   end
 end
