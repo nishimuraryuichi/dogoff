@@ -1,0 +1,24 @@
+.dog-registration
+  .dog-registration__title
+    .dog-registration__title__text ワンちゃんの情報
+  .dog-registration__info
+    = form_with locla: true do |f|
+      .dog-info ワンちゃんの写メ
+      %input.default{type: 'text',placeholder: 'ドラッグ&ドロップ'}
+      .dog-info ワンちゃんの名前
+      %input.default{type: 'text',placeholder: '例 ポチ'}
+      .dog-info 犬種
+      %input.default{type: 'text',placeholder: '例 柴犬'}
+      .dog-info 年齢
+      %input.default{type: 'text',placeholder: '例 2歳'}
+      .dog-info オス・メス
+      %input.default{type: 'text',placeholder: '例 オス'}
+      .dog-house お家
+      .dog-info 都道府県
+      %input.default{type: 'text',placeholder: '例 兵庫県'}
+      .dog-info 市町村
+      %input.default{type: 'text',placeholder: '例 西宮市'}
+      .dog-info 大字
+      %input.default{type: 'text',placeholder: '例 名塩 ここは任意です'}
+      .dog-info-btn
+        = link_to '登録する',root_path,class: 'btn-link'
