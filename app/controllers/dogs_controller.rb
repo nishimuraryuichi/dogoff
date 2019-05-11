@@ -3,12 +3,15 @@ class DogsController < ApplicationController
     @dog = Dog.new
   end
   def create
-    @dog = Dog.new(dog_params)
+    @dog = current_user.dogs.new(dog_params)
     if @dog.save
       redirect_to root_path
     else
       render :new
     end
+  end
+  def show
+    @dog = Dog.find(params[:id])
   end
 
 
