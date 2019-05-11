@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :members
   has_many :groups, through: :members
-  has_many :rooms,through: :user_room
   has_many :user_rooms
+  has_many :rooms, through: :user_rooms
   has_many :dogs
 end
