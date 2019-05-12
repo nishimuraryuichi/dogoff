@@ -1,38 +1,36 @@
-.item-message{
-  padding-top: 20px;
+.message{
+  padding: 20px;
   background: #fafafa;
   &__conteiner{
-    width: 700px;
+    width:calc(100% - 400px);
     background-color: white;
     margin: 0 auto;
     &__content{
       .transaction-field{
-        padding-top: 10px;
-        width: 700px;
+        padding: 10px 0 20px 0;
+        width:calc(100% - 200px);
         margin: 15px auto;
         text-align: right;
         font-size: 14px;
         background: white;
         .user-message{
-          margin: 10px 0;
           overflow: hidden;
           display: flex;
+          justify-content: start;
           &__face{
-            margin-left: 60px;
-            width: 30px;
+            margin-right:15px;
           }
           &__body{
-            width: 100%;
-            text-align: right;
+            text-align:left;
             margin-top: 20px;
+            border-radius: 12px;
+            width:calc(100% - 200px);
+            background: #edf1ee;
             &__text{
               display: inline-block;
               position: relative;
               margin: 0 25px 0 0;
-              padding: 20px 0 20px 10px;
-              width: 560px;
-              border-radius: 12px;
-              background: #edf1ee;
+              padding: 20px 0 20px 10px;x
               p{
                 text-align: left;
                 margin: 0;
@@ -53,6 +51,17 @@
           }
         }
       }
+    }
+  }
+  .messages-form-conteiner{
+    text-align: center;
+    .messages-form-text{
+      border-radius: 10px;
+      width:300px;
+      text-align: center;
+    }
+    .messages-btn{
+      margin-top:10px;
     }
   }
 }

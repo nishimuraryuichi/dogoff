@@ -12,7 +12,7 @@
         %h4
           メールアドレス： #{current_user.email}
         = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
-        = link_to "ワンちゃん編集",new_dog_path
+        = link_to "ワンちゃん情報",new_dog_path
         = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'roguauto'
       - else
         %h2 現在ログインしていません

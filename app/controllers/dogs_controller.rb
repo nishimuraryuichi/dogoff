@@ -10,8 +10,8 @@ class DogsController < ApplicationController
       render :new
     end
   end
-  def show
-    @dog = Dog.find(params[:id])
+  def search
+    @dogs = Dog.where('prefecture LIKE ? and municipalities LIKE ? and town LIKE ? and breed LIKE ?',"%#{params[:prefecture]}%","%#{params[:municipalities]}%","%#{params[:town]}%","%#{params[:breed]}%")
   end
 
 

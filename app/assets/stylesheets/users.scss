@@ -1,3 +1,14 @@
+.title-link{
+  font-size:40px;
+  .title-name{
+    background-color: #663300;
+    text-decoration: none;
+    color:white;
+    padding:7px;
+    border-radius: 30px;
+    position: fixed;
+  }
+}
 .search-main{
   margin-top: 0;
   background-color:#eeeeee;
@@ -41,7 +52,10 @@
       &__name{
         margin-right: 10px;
       }
-      &__mf{
+      &__breed{
+        margin-right: 10px;
+      }
+      &__sex{
         margin-right: 10px;
       }
       &__age{
@@ -52,16 +66,5 @@
     &__message{
       margin-right: 20px;
     }
-  }
-}
-.title-link{
-  font-size:40px;
-  .title-name{
-    background-color: #663300;
-    text-decoration: none;
-    color:white;
-    padding:7px;
-    border-radius: 30px;
-    position: fixed;
   }
 }
