@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
   belongs_to :user
-  belongs_to :group
-  belongs_to :room
+  belongs_to :group,optional: true
+  belongs_to :room,optional: true
 end

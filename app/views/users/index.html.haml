@@ -1,24 +1,16 @@
-.title-link
-  = link_to 'DogOFF',root_path,class: 'title-name'
-.search-main
-  .search-main__menu お友達を探す
-  .search-main__content
-    .search-main__content__prefecture 都道府県
-    .search-main__contentt__city 市町村
-    %input.search-main__content__dog{type: "text",placeholder: '犬種'} 
-    .search-main__content__btn
-      = link_to '検索',root_path,class: 'search-main-search'
+= render './shared/header-title'
+= render './shared/search-form'
 .search-result
   .search-result__conteiner
     .search-result__conteiner__image
       = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg",size: '100x100'
     .search-result__conteiner__info
       .search-result__conteiner__info__name ケンちゃん
-      .search-result__conteiner__info__mf オス
+      .search-result__conteiner__info__breed プードル
+      .search-result__conteiner__info__sex オス
       .search-result__conteiner__info__age ２歳
       .search-result__conteiner__info__address 御幣島
-    .search-result__conteiner__message メッセージを送る
+    .search-result__conteiner__message
+      
 
 
-
-  

@@ -1,0 +1,18 @@
+.message
+  .message__conteiner
+    .message__conteiner__content
+      .transaction-field
+        .user-message
+          .user-message__face
+            .wrrap
+              = fa_icon("circle 3x")
+              %span "#{current_user.email}"
+          .user-message__body
+            .user-message__body__text
+          
+  .messages-form-conteiner
+    = form_with model: @message, local: true do |f|
+      .messages-form
+        = f.text_field :content,placeholder: '文章を入力してください',class: 'messages-form-text'
+      .messages-btn
+        = f.submit '送信',class: 'send-btn'

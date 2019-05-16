@@ -1,0 +1,21 @@
+= render './shared/header-title'
+= render './shared/search-form'
+.search-result-dogs
+  - @dogs.each do |dog|
+    .search-result
+      .search-result__conteiner
+        .search-result__conteiner__image
+          = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg",size: '100x100'
+        .search-result__conteiner__info
+          .search-result__conteiner__info__name
+            = dog.name
+          .search-result__conteiner__info__breed
+            = dog.breed
+          .search-result__conteiner__info__sex
+            = dog.sex
+          .search-result__conteiner__info__age
+            = dog.age
+          .search-result__conteiner__info__address
+            = dog.municipalities
+        .search-result__conteiner__message
+          = link_to 'メッセージを送る',user_messages_path(dog.user_id)

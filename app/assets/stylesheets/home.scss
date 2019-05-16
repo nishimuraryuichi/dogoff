@@ -6,9 +6,7 @@
       display:flex;
       justify-content:flex-start;
       line-height: 50px;
-      &__title{
-        margin:0 20px;
-        font-size:40px;
+      margin-left:200px;
         .title-name{
           background-color: #663300;
           text-decoration: none;
@@ -16,7 +14,6 @@
           padding:7px;
           border-radius: 30px;
         }
-      }
       &__left{
         margin-right: 10px;
         .left-text{
