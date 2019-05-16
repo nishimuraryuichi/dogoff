@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :groups
   resources :messages
-  resources :users,only: [:index]
+  resources :users
   resources :dogs do
     collection do
       get :search

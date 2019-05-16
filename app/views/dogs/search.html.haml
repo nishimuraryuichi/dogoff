@@ -3,7 +3,7 @@
 .search-main
   .search-main__menu お友達を探す
   .search-main__content
-    = form_with url: 'dogs/search',method: 'get',local: true do |f|
+    = form_with url: search_dogs_path,method: 'get',local: true do |f|
       .search-main__content__dog
       = f.text_field :prefecture, placeholder: '都道府県'
       .search-main__content__dog
@@ -32,4 +32,4 @@
           .search-result__conteiner__info__address
             = dog.municipalities
         .search-result__conteiner__message
-          = link_to 'メッセージを送る',messages_path
+          = link_to 'メッセージを送る',messages_path(@user)

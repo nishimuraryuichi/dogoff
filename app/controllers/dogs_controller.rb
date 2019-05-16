@@ -1,4 +1,6 @@
 class DogsController < ApplicationController
+  # before_action :set_dogs
+
   def new
     @dog = Dog.new
   end
@@ -10,6 +12,14 @@ class DogsController < ApplicationController
       render :new
     end
   end
+  def edit
+  end
+  def update
+  end
+  def destroy
+  end
+ 
+
   def search
     @dogs = Dog.where('prefecture LIKE ? and municipalities LIKE ? and town LIKE ? and breed LIKE ?',"%#{params[:prefecture]}%","%#{params[:municipalities]}%","%#{params[:town]}%","%#{params[:breed]}%")
   end
@@ -20,5 +30,9 @@ class DogsController < ApplicationController
   def dog_params
     params.require(:dog).permit(:image,:name,:breed,:prefecture,:municipalities,:town,:age,:sex)
   end
+
+  # def set_dogs
+  #   @user = User.all
+  # end
 
 end

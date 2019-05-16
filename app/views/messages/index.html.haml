@@ -9,8 +9,7 @@
               %span "#{current_user.email}"
           .user-message__body
             .user-message__body__text
-              - @message.each do |m|
-                = m.content
+          
   .messages-form-conteiner
     = form_with model: @message, local: true do |f|
       .messages-form
