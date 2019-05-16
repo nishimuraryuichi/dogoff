@@ -1,5 +1,4 @@
 class DogsController < ApplicationController
-  # before_action :set_dogs
 
   def new
     @dog = Dog.new
@@ -38,8 +37,5 @@ class DogsController < ApplicationController
     params.require(:dog).permit(:image,:name,:breed,:prefecture,:municipalities,:town,:age,:sex)
   end
 
-  # def set_dogs
-  #   @user = User.all
-  # end
 
 end
