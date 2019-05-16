@@ -13,8 +13,15 @@ class DogsController < ApplicationController
     end
   end
   def edit
+    @dog = Dog.find(params[:id])
   end
   def update
+    @dog = Dog.find(params[:id])
+
+    if @dog.user_id == current_user.id
+      @dog.update(dog_params)
+      redirect_to root_path
+    end
   end
   def destroy
   end

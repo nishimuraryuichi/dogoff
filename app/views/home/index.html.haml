@@ -1,8 +1,8 @@
+.title-link
+  = link_to 'DogOFF',root_path,class: 'title-name'
 .index-main
   .main-conteiner
     .header-content
-      .header-content__title
-        = link_to 'DogOFF',root_path,class: 'title-name'
       .header-content__left
         = link_to '近くのお友達を探す',users_path,class: 'left-text'
       .header-content__right
@@ -10,7 +10,7 @@
     .header-registration
       - if user_signed_in?
         %h4
-          メールアドレス： #{current_user.email}
+          このアカウントで登録中です： #{current_user.email}
         = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
         = link_to "ワンちゃん情報",new_dog_path
         = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'roguauto'
@@ -22,14 +22,7 @@
     .main-top__image
       = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg"
       %p もっと豊かな生活に
-    .main-top__bottom
-      .main-top__bottom__menu 探す
-      .main-top__bottom__content
-        .main-top__bottom__content__prefecture 都道府県
-        .main-top__bottom__content__city 市町村
-        %input.main-top__bottom__content__dog{type: "text",placeholder: '犬種'} 
-        .main-top__bottom__content__btn
-          = link_to '検索',root_path,class: 'main-search'
+    = render './shared/search-form'
   .main-middle
     .main-middle__title ワンちゃんの友達が見つかる
     .main-middle__content 説明です説明です説明です

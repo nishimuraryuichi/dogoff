@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :groups
-  resources :messages
-  resources :users
+  # resources :messages
+  resources :users do
+    resources :messages
+  end
   resources :dogs do
     collection do
       get :search

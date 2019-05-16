@@ -1,19 +1,5 @@
-.title-link
-  = link_to 'DogOFF',root_path,class: 'title-name'
-.search-main
-  .search-main__menu お友達を探す
-  .search-main__content
-    = form_with url: search_dogs_path,method: 'get',local: true do |f|
-      .search-main__content__dog
-      = f.text_field :prefecture, placeholder: '都道府県'
-      .search-main__content__dog
-      = f.text_field :municipalities, placeholder: '市町村'
-      .search-main__content__dog
-      = f.text_field :town, placeholder: '地域'
-      .search-main__content__dog
-      = f.text_field :breed, placeholder: '犬種'
-      .search-main__content__btn
-      = f.submit '検索',class: 'search-main-search'
+= render './shared/header-title'
+= render './shared/search-form'
 .search-result-dogs
   - @dogs.each do |dog|
     .search-result
@@ -32,4 +18,4 @@
           .search-result__conteiner__info__address
             = dog.municipalities
         .search-result__conteiner__message
-          = link_to 'メッセージを送る',messages_path(@user)
+          = link_to 'メッセージを送る',user_messages_path(dog.user_id)

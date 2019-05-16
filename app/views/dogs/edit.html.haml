@@ -1,8 +1,6 @@
 .dog-registration
   .dog-registration__title
     .dog-registration__title__text ワンちゃんの情報
-  .dog-info-btn
-    = link_to '編集する',edit_dog_path(current_user),class: 'btn-link'
   .dog-registration__info
     = form_with model: @dog, local: true do |f|
       .dog-info ワンちゃんの写メ
@@ -23,4 +21,4 @@
       .dog-info 大字
       =f.text_field :town ,placeholder: '例 名塩 ここは任意です'
       .dog-info-btn
-        = f.submit '登録する', class: 'btn-link'
+        = f.submit '更新する', class: 'btn-link',data: {confirm: '編集された内容でよろしいですか？'}

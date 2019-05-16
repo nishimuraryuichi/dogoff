@@ -6,8 +6,8 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
   def create
-    @message =@user.messages.new(message_params)
-
+    @message =Message.new(message_params)
+    binding.pry
     if @message.save
       redirect_to root_path
     else
@@ -20,6 +20,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.permit(:content,:image).merge(user_id: current_user.id)
+    params.permit(:content,:image).merge(user_id: current_user.id,oppo_id:params[:user_id])
   end
 end
