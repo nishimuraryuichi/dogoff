@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_060302) do
+ActiveRecord::Schema.define(version: 2019_05_22_035646) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,10 +55,13 @@ ActiveRecord::Schema.define(version: 2019_05_16_060302) do
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.string "image", null: false
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "room_id"
+    t.string "breed", null: false
+    t.string "town", null: false
+    t.string "any"
     t.index ["room_id"], name: "index_groups_on_room_id"
   end
 
@@ -111,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_05_16_060302) do
     t.datetime "updated_at", null: false
     t.string "sex", null: false
     t.integer "age", null: false
+    t.string "nickname", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

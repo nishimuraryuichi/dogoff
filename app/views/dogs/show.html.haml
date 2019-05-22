@@ -1,0 +1,31 @@
+.dog-registration
+  .dog-registration__title
+    .dog-registration__title__text ワンちゃんの情報
+  .dog-registration__info
+    - @dogs.each do |dog|
+      .dog-info ワンちゃんの写メ
+      = dog.image
+      .dog-info ワンちゃんの名前
+      .dog-show
+        = dog.name
+      .dog-info 犬種
+      .dog-show
+        = dog.breed
+      .dog-info 年齢
+      .dog-show
+        = dog.age
+      .dog-info オス・メス
+      .dog-show
+        = dog.sex
+      .dog-house お家
+      .dog-info 都道府県
+      .dog-show
+        = dog.prefecture
+      .dog-info 市町村
+      .dog-show
+        = dog.municipalities
+      .dog-info 大字
+      .dog-show
+        = dog.town
+      .dog-info-btn
+        = link_to '編集ページへ',edit_dog_path(dog), class: 'btn-link'

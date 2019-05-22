@@ -1,0 +1,14 @@
+.search-main
+  .search-main__menu グループを探す
+  .search-main__content
+    = form_with url: search_groups_path ,method: 'GET',local: true do |f|
+      .search-main__content__dog
+      = f.text_field :name, placeholder: 'グループ名'
+      .search-main__content__dog
+      = f.text_field :breed, placeholder: '犬種'
+      .search-main__content__dog
+      = f.text_field :town, placeholder: '市町村'
+      .search-main__content__dog
+      = f.text_field :any, placeholder: 'その他'
+      .search-main__content__btn
+      = f.submit '検索',class: 'search-main-search'
