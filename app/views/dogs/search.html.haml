@@ -1,5 +1,5 @@
 = render './shared/header-title'
-= render './shared/search-form'
+= render './shared/search-dogs'
 .search-result-dogs
   - @dogs.each do |dog|
     .search-result
@@ -18,4 +18,8 @@
           .search-result__conteiner__info__address
             = dog.municipalities
         .search-result__conteiner__message
-          = link_to 'メッセージを送る',user_messages_path(dog.user_id)
+          - if user_signed_in?
+            = link_to 'メッセージを送る',new_user_message_path(dog.user_id)
+            = link_to 'グループを作る',new_group_path
+          - else
+            %h2 ログイン後にメッセージが送れます

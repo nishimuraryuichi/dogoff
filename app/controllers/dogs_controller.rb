@@ -1,5 +1,8 @@
 class DogsController < ApplicationController
 
+  def index
+    @dogs = Dog.all
+  end
   def new
     @dog = Dog.new
   end
@@ -11,15 +14,22 @@ class DogsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @dogs = Dog.where(user_id: current_user.id)
+    # 自分が持ってる犬を持ってくるコード
+  end
+
   def edit
-    @dog = Dog.find(params[:id])
+    @dogs = Dog.find(params[:id])
   end
   def update
-    @dog = Dog.find(params[:id])
-
-    if @dog.user_id == current_user.id
-      @dog.update(dog_params)
+    @dogs = Dog.find(params[:id])
+    if @dogs.user_id == current_user.id
+      @dogs.update(dog_params)
       redirect_to root_path
+    else
+      render :edit
     end
   end
   def destroy

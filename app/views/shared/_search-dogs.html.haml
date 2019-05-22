@@ -1,7 +1,7 @@
 .search-main
   .search-main__menu お友達を探す
   .search-main__content
-    = form_with url: 'dogs/search',method: 'get',local: true do |f|
+    = form_with url: search_dogs_path ,method: 'GET',local: true do |f|
       .search-main__content__dog
       = f.text_field :prefecture, placeholder: '都道府県'
       .search-main__content__dog

@@ -1,0 +1,18 @@
+.group-registration
+  .group-registration__title
+    .group-registration__title__text グループ情報
+  .group-info-btn
+    .group-registration__info
+      = form_with model: @group, local: true do |f|
+        .group-info グループの写メ
+        =f.file_field :image ,placeholder: 'ドラッグ&ドロップ'
+        .group-info グループの名前
+        =f.text_field :name ,placeholder: '例 プードル会 西宮会'
+        .group-info 犬種
+        =f.text_field :breed ,placeholder: '例 多種 柴犬'
+        .group-info 市町村
+        =f.text_field :town ,placeholder: '例 横浜市'
+        .group-info 他の項目
+        =f.text_field :any ,placeholder: '例 女性飼い主限定'
+        .group-info-btn
+          = f.submit '作成する', class: 'btn-link'

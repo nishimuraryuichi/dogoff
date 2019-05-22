@@ -5,15 +5,20 @@
     .header-content
       .header-content__left
         = link_to '近くのお友達を探す',users_path,class: 'left-text'
+      .header-content__middle
+        = link_to 'グループを探す',groups_path,class: 'middle-text' 
       .header-content__right
-        = link_to 'グループを探す',groups_path,class: 'right-text' 
+        - if user_signed_in?
+          -# = link_to 'メッセージ',user_messages_path(current_user),class: 'right-text' 
     .header-registration
       - if user_signed_in?
         %h4
-          このアカウントで登録中です： #{current_user.email}
+          アカウント： #{current_user.nickname}
         = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
-        = link_to "ワンちゃん情報",new_dog_path
+        = link_to "ワンちゃん情報" ,new_dog_path
+        = link_to "ワンちゃん編集",dog_path(current_user)
         = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'roguauto'
+        
       - else
         %h2 現在ログインしていません
         = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
@@ -22,7 +27,7 @@
     .main-top__image
       = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg"
       %p もっと豊かな生活に
-    = render './shared/search-form'
+    = render './shared/search-dogs'
   .main-middle
     .main-middle__title ワンちゃんの友達が見つかる
     .main-middle__content 説明です説明です説明です

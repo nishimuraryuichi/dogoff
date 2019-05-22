@@ -1,0 +1,10 @@
+.title-link
+  = link_to 'DogOFF',root_path,class: 'title-name'
+.message
+  = render './shared/messages'
+  .messages-form-conteiner
+    = form_with model: [@user ,@message], local: true do |f|
+      .messages-form
+        = f.text_field :content,placeholder: '文章を入力してください',class: 'messages-form-text'
+      .messages-btn
+        = f.submit '送信',class: 'send-btn'

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   resources :comments
   devise_for :users
-  root 'home#index'
-  resources :groups
-  # resources :messages
+  root 'dogs#index'
+  resources :groups do
+    resources :messages
+    collection do
+      get :search
+    end
+  end
+  
   resources :users do
     resources :messages
   end
