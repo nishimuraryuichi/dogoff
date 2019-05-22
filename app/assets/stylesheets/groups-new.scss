@@ -1,4 +1,4 @@
-.dog-registration{
+.group-registration{
   text-align: center;
   background-color: #eeeeee;
   margin: 20px 100px;
@@ -13,21 +13,21 @@
     }
   }
   &__info{
-    .dog-info{
+    .group-info{
       margin:10px 0;
     }
     input{border-radius: 10px;}
-    .dog-show{
+    .group-show{
       background-color: white;
       color:burlywood;
       margin:0 20px;
       font-size:20px;
     }
-    .dog-house{
+    .group-house{
       margin-top:15px;
       font-size: 25px;
     }
-    .dog-info-btn{
+    .group-info-btn{
       margin:20px 0;
       .btn-link{
         text-decoration: none;

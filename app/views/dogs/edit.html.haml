@@ -2,7 +2,7 @@
   .dog-registration__title
     .dog-registration__title__text ワンちゃんの情報
   .dog-registration__info
-    = form_with model: @dog, local: true do |f|
+    = form_with model: @dogs, local: true do |f|
       .dog-info ワンちゃんの写メ
       =f.file_field :image ,placeholder: 'ドラッグ&ドロップ'
       .dog-info ワンちゃんの名前

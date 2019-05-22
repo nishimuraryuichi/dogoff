@@ -1,0 +1,22 @@
+= render './shared/header-title'
+= render './shared/search-groups'
+.search-result-groups
+  - @groups.each do |group|
+    .search-result
+      .search-result__conteiner
+        .search-result__conteiner__image
+          = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_groups01.jpg",size: '100x100'
+        .search-result__conteiner__info
+          .search-result__conteiner__info__name
+            = group.name
+          .search-result__conteiner__info__breed
+            = group.breed
+          .search-result__conteiner__info__town
+            = group.town
+          .search-result__conteiner__info__any
+            = group.any
+        .search-result__conteiner__message
+          - if user_signed_in?
+            = link_to 'グループに入る',new_group_message_path(group)
+          - else
+            %h2 ログイン後にメッセージが送れます

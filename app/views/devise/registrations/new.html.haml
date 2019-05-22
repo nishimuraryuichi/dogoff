@@ -7,6 +7,10 @@
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email"
     .field
+      = f.label :ニックネーム
+      %br/
+      = f.text_field :nickname,placeholder: '例 ミッチー'
+    .field
       = f.label :性別
       %br/
       = f.text_field :sex,placeholder: '男 or 女'
