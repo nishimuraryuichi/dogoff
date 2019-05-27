@@ -6,9 +6,9 @@
           .user-message__face
             .wrrap
               = fa_icon("circle 3x")
-              %span "#{message.user.nickname}"
+              -# %span "#{@group.messages.user}"
           .user-message__body
             .user-message__body__text
-              -# = message.message_show
               = message.content
-              = message.created_at.strftime("%Y/%m/%d %H:%M")
+              %br
+              = message.created_at.strftime("%Y年%m月%d日 %H:%M")

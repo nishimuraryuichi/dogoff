@@ -1,13 +1,17 @@
 .title-link
   = link_to 'DogOFF',root_path,class: 'title-name'
 = render './shared/search-groups'
+.search-description
+  検索するとみんなが出てくるよ
+  %br グループに入ってみんなと話し合おう
+.search-description-arrow ↓↓↓
 .groups-result
   .groups-result__conteiner
     .groups-result__conteiner__image
       = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg",size: '100x100'
     .groups-result__conteiner__info
       .groups-result__conteiner__info__name ボーダーコリー会
-      .groups-result__conteiner__info__address 尼崎市
+      .groups-result__conteiner__info__address 西宮市
       .groups-result__conteiner__info__type ボーダーコリー
       .groups-result__conteiner__inf__gender 女性限定
     .groups-result__conteiner__new グループに入る

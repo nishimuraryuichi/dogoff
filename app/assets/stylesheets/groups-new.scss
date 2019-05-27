@@ -29,6 +29,8 @@
     }
     .group-info-btn{
       margin:20px 0;
+      display: flex;
+      justify-content: center;
       .btn-link{
         text-decoration: none;
         background-color: #CD853F;

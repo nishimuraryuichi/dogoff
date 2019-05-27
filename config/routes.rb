@@ -9,9 +9,9 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users do
-    resources :messages
-  end
+  resources :users
+    # resources :messages
+  # end
   resources :dogs do
     collection do
       get :search

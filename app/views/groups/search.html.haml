@@ -5,18 +5,22 @@
     .search-result
       .search-result__conteiner
         .search-result__conteiner__image
-          = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_groups01.jpg",size: '100x100'
+          - if group.image.attached?
+            = image_tag group.image,size:'100x100'
         .search-result__conteiner__info
           .search-result__conteiner__info__name
+            = 'グループ名:'
             = group.name
           .search-result__conteiner__info__breed
+            = 'ワンちゃん:'
             = group.breed
           .search-result__conteiner__info__town
+            = '地域:'
             = group.town
           .search-result__conteiner__info__any
             = group.any
         .search-result__conteiner__message
           - if user_signed_in?
-            = link_to 'グループに入る',new_group_message_path(group)
+            = link_to 'グループに入る',new_group_message_path(group.id), class: 'search-groups-message'
           - else
             %h2 ログイン後にメッセージが送れます

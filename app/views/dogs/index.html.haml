@@ -4,39 +4,70 @@
   .main-conteiner
     .header-content
       .header-content__left
-        = link_to '近くのお友達を探す',users_path,class: 'left-text'
+        = link_to 'お友達を探す',users_path,class: 'left-text'
       .header-content__middle
         = link_to 'グループを探す',groups_path,class: 'middle-text' 
+        = link_to 'グループを作る',new_group_path,class: 'middle-text'
       .header-content__right
         - if user_signed_in?
-          -# = link_to 'メッセージ',user_messages_path(current_user),class: 'right-text' 
+          = link_to 'メッセージ',group_messages_path(current_user),class: 'right-text' 
     .header-registration
       - if user_signed_in?
         %h4
           アカウント： #{current_user.nickname}
         = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
-        = link_to "ワンちゃん情報" ,new_dog_path
-        = link_to "ワンちゃん編集",dog_path(current_user)
-        = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'roguauto'
-        
+        = link_to "ワンちゃん情報" ,new_dog_path,class: 'dogs-info'
+        = link_to "ワンちゃん編集",dog_path(current_user),class: 'dogs-edit'
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'signout'
       - else
         %h2 現在ログインしていません
         = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
         = link_to "新規登録", new_user_registration_path, class: 'header-registration__right'
   .main-top
     .main-top__image
-      = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg"
+      = image_tag "acd131f8318a3d038c15c94d3f84352c_s.jpg"
       %p もっと豊かな生活に
-    = render './shared/search-dogs'
+    .main-top__search
+      .main-top__search__dogs
+        = render './shared/search-dogs'
+      .main-top__search__groups
+        = render './shared/search-groups'
   .main-middle
-    .main-middle__title ワンちゃんの友達が見つかる
-    .main-middle__content 説明です説明です説明です
+    .main-middle__title ワンちゃんの友達が見つかるよ
+    .main-middle__content
+      .main-middle__content__1
+        お友達を探す
+        %br
+        どれか１つの項目だけでも該当があればワンちゃんのお友達が出てくるよ!
+        %br
+        気になるワンちゃんを見つけたら、同じグループで会話をしてオフ会に参加してみよう！
+      .main-middle__content__2
+        グループを探す
+        %br
+        気になる項目を入力して趣味の合った仲間を見つけよう！
+        %br
+        自分の好きなグループも作れるよ！
+        %br
+        その他は女性飼い主限定やお昼の時間など細かいことを入力する項目だよ！
     .main-middle__image 画像
   .main-bottom
-    .main-bottom__title 登録方法
-    .main-bottom__roguin メールアドレス
-    .main-bottom__address 住所
-    .main-bottom__owner 飼い主
-    .main-bottom__dog ワンちゃん
+    .main-bottom__info
+      .main-bottom__info__title 登録方法
+      .main-bottom__info__owner
+        新規登録
+        %br
+        = fa_icon('chevron-down 2x')
+        %br
+        メールアドレス・飼い主様のニックネームと性別、年代
+      .main-bottom__info__dog
+        ワンちゃんの登録
+        %br
+        = fa_icon('chevron-down 2x')
+        %br
+        名前・犬種・年齢・オスメス・お住い情報（市町村まで必須です）
+      .main-bottom__info__end 登録漏れがないようにね！
   .main-footer
-    .main-footer 仮
+    .main-footer__content
+      .main-footer__content__email 問合せ先
+      .main-footer__content__article 記事
+      .main-footer__content__photo 写メや動画
