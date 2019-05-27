@@ -4,7 +4,8 @@
   .dog-registration__info
     - @dogs.each do |dog|
       .dog-info ワンちゃんの写メ
-      = dog.image
+      - if dog.image.attached?
+        = image_tag dog.image,size:'100x100'
       .dog-info ワンちゃんの名前
       .dog-show
         = dog.name

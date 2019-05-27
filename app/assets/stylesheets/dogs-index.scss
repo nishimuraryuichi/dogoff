@@ -1,12 +1,13 @@
 .index-main{
   .main-conteiner{
-    background-color:#ccffcc;
+    background-color:#ffffcc;
     padding-bottom: 6px;
     .header-content{
       display:flex;
       justify-content:flex-start;
-      line-height: 50px;
+      align-items: center;
       margin-left:200px;
+      height: 70px;
         .title-name{
           background-color: #663300;
           text-decoration: none;
@@ -18,35 +19,60 @@
         margin-right: 10px;
         .left-text{
           text-decoration: none;
-          color:#996633;
+          color:#ff8c00;
+          font-weight: bold;
+          font-size: 20px;
         }
       }
       &__middle{
         margin-right: 10px;
         .middle-text{
           text-decoration-line: none;
-          color:#996633;
+          color:#ff8c00;
+          font-weight: bold;
+          font-size: 20px;
         }
       }
       &__right{
         .right-text{
-          text-decoration-line: none;
-          color:#996633;
+          text-decoration: none;
+          color:#ff8c00;
+          font-weight: bold;
+          font-size: 20px;
         }
       }
     }
     .header-registration{
       display:flex;
       justify-content:flex-end;
+      align-items: flex-end;
+      height: 30px;
       h4{
         margin-right: 5px;
+        font-weight: bold;
       }
-      .roguauto{
+      .edit{
+        margin-right: 5px;
         text-decoration: none;
-        color:#003300;
-        background-color: white;
+        color:#8B4513;
+      }
+      .dogs-info{
+        margin-right: 5px;
+        text-decoration: none;
+        color:#8B4513;
+      }
+      .dogs-edit{
+        margin-right: 5px;
+        text-decoration: none;
+        color:#8B4513;
+      }
+      .signout{
+        text-decoration: none;
+        color:#444444;
+        background-color:white;
         border-radius: 50px;
-        padding:2px;
+        padding:3px;
+        margin-right: 5px;
       }
       &__left{
         padding-right:20px;
@@ -79,6 +105,14 @@
         font-size:27px;
       }
     }
+    &__search{
+      background-color: #eeeeee;
+      display: flex;
+      justify-content: center;
+      &__dogs{
+        margin-right: 10px;
+      }
+    }
     &__bottom{
       margin-top: 0;
       background-color:#eeeeee;
@@ -105,21 +139,62 @@
   }
   .main-middle{
     text-align:center;
-
-    &__title{}
-    &__content{}
+    background-color: #ffffe0;
+    &__title{
+      font-size: 23px;
+      padding:10px 0;
+    }
+    &__content{
+      display: flex;
+      &__1{
+        border-radius: 10px;
+        border:solid 3px #8B4513;
+        margin-right:5px;
+        width:50%;
+        padding:5px;
+      }
+      &__2{
+        border-radius: 10px;
+        border:solid 3px #8B4513;
+        width:50%;
+        padding:5px;
+      }
+    }
     &__image{}
   }
-  .main-bottom{
-    background-color:#ffffcc;
-    text-align:center;
-    &__title{}
-    &__roguin{}
-    &__address{}
-    &__owner{}
-    &__dog{}
+  .main-bottom{  
+    text-align: center;
+    margin:0 auto;
+    width:calc(100% - 200px);
+    padding:20px 0;
+    &__info{
+      &__title{
+        font-size: 26px;
+      }
+      &__owner{
+        margin-top:5px;
+        border:solid 2px black;
+        border-radius: 5px;
+      }
+      &__dog{
+        margin-top:10px;
+        border:solid 2px black;
+        border-radius: 5px;
+      }
+      &__end{
+        padding-top:15px;
+        font-size: 20px;
+      }
+    }
   }
   .main-footer{
-    background-color:green;
+    background-color:#fffacd;
+    text-align: center;
+    &__content{
+      &__email{}
+      &__article{}
+      &__photo{
+      }
+    }
   }
 }

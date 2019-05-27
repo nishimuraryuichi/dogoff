@@ -5,21 +5,26 @@
     .search-result
       .search-result__conteiner
         .search-result__conteiner__image
-          = image_tag "http://www.worldfolksong.com/songbook/animal/img/cute_dogs01.jpg",size: '100x100'
+          - if dog.image.attached?
+            = image_tag dog.image,size:'100x100'
         .search-result__conteiner__info
           .search-result__conteiner__info__name
+            = '名前:'
             = dog.name
           .search-result__conteiner__info__breed
+            = '犬種:'
             = dog.breed
           .search-result__conteiner__info__sex
             = dog.sex
           .search-result__conteiner__info__age
             = dog.age
+            = '歳'
           .search-result__conteiner__info__address
+            = '地域:'
             = dog.municipalities
         .search-result__conteiner__message
           - if user_signed_in?
-            = link_to 'メッセージを送る',new_user_message_path(dog.user_id)
-            = link_to 'グループを作る',new_group_path
+            -# = link_to 'メッセージを送る',new_user_message_path(dog.user_id)
+            = link_to '一緒のグループで話す',new_group_path,class: 'search-dogs-message'
           - else
             %h2 ログイン後にメッセージが送れます

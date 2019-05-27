@@ -2,6 +2,8 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    # @user = Message.find(params[user_id: user_id])
+    # @groups = @user.messages.where(params[:group_id])
   end
   def new
     @dog = Dog.new
@@ -33,6 +35,13 @@ class DogsController < ApplicationController
     end
   end
   def destroy
+    @user = current_user
+    @dog = @user.dogs.find(params[:id])
+    if @dog.destroy!
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
  
 

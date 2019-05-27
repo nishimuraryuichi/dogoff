@@ -2,7 +2,7 @@
   padding: 20px;
   background: #fafafa;
   &__conteiner{
-    width:calc(100% - 400px);
+    width:calc(100% - 100px);
     background-color: white;
     margin: 0 auto;
     &__content{
@@ -24,7 +24,7 @@
             text-align:left;
             margin-top: 20px;
             border-radius: 12px;
-            width:calc(100% - 200px);
+            width:calc(100% - 50px);
             background: #edf1ee;
             &__text{
               display: inline-block;

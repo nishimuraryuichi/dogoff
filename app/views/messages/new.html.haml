@@ -1,9 +1,25 @@
 .title-link
   = link_to 'DogOFF',root_path,class: 'title-name'
+.search-result-groups
+  .search-result
+    .search-result__conteiner
+      .search-result__conteiner__image
+        - if @group.image.attached?
+          = image_tag @group.image,size:'100x100'
+      .search-result__conteiner__info
+        .search-result__conteiner__info__name
+          = @group.name
+        .search-result__conteiner__info__breed
+          = @group.breed
+        .search-result__conteiner__info__town
+          = @group.town
+        .search-result__conteiner__info__any
+          = @group.any
 .message
   = render './shared/messages'
   .messages-form-conteiner
-    = form_with model: [@user ,@message], local: true do |f|
+    -# = form_with model: [@user ,@message], local: true do |f|
+    = form_with model: [@group ,@message], local: true do |f|
       .messages-form
         = f.text_field :content,placeholder: '文章を入力してください',class: 'messages-form-text'
       .messages-btn
