@@ -25,6 +25,6 @@
         .search-result__conteiner__message
           - if user_signed_in?
             -# = link_to 'メッセージを送る',new_user_message_path(dog.user_id)
-            = link_to '一緒のグループで話す',new_group_path,class: 'search-dogs-message'
+            = link_to '一緒のグループを探す',group_messages_path(dog.user),class: 'search-dogs-message'
           - else
             %h2 ログイン後にメッセージが送れます

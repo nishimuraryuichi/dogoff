@@ -1,34 +1,43 @@
-%h2
-  アカウント編集
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  .field
-    = f.label :パスワード
-    %i (変更したいパスワードを入力してください)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-    - if @minimum_password_length
+.registrations-main
+  %h2
+    アカウント編集
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :メールアドレス
       %br/
-      %em
-        = @minimum_password_length
-        文字以上を入力してください
-  .field
-    = f.label :確認のためもう一度パスワードを入力してください
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :現在のパスワードを入力してください
-    %br/
-    = f.password_field :current_password, autocomplete: "current-password"
-  .actions
-    = f.submit "更新"
-%p
-  削除しますか? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "戻る", :back
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      = f.label :性別
+      %br/
+      = f.text_field :sex, autofocus: true, autocomplete: "sex"
+    .field
+      = f.label :年齢
+      %br/
+      = f.text_field :age, autofocus: true, autocomplete: "age"
+    .field
+      = f.label :パスワード
+      %i (変更したいパスワードを入力してください)
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          文字以上を入力してください
+    .field
+      = f.label :確認のためもう一度パスワードを入力してください
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field
+      = f.label :現在のパスワードを入力してください
+      %br/
+      = f.password_field :current_password, autocomplete: "current-password"
+    .actions
+      = f.submit "更新"
+  %p
+    #{button_to "削除しますか？", registration_path(resource_name), data: { confirm: "本当に削除しますか？?" }, method: :delete}
+  = link_to "戻る", :back

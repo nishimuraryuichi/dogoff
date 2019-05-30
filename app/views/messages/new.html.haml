@@ -1,17 +1,21 @@
-.title-link
-  = link_to 'DogOFF',root_path,class: 'title-name'
+= render './shared/header-title'
 .search-result-groups
   .search-result
     .search-result__conteiner
       .search-result__conteiner__image
         - if @group.image.attached?
           = image_tag @group.image,size:'100x100'
+        - else
+          = image_tag 'icon_043140_64.png'
       .search-result__conteiner__info
         .search-result__conteiner__info__name
+          = 'グループ名:'
           = @group.name
         .search-result__conteiner__info__breed
+          = 'ワンちゃん:'
           = @group.breed
         .search-result__conteiner__info__town
+          = '地域:'
           = @group.town
         .search-result__conteiner__info__any
           = @group.any

@@ -18,11 +18,17 @@
           display: flex;
           justify-content: start;
           &__face{
-            margin-right:15px;
+            margin-right:10px;
+            &__image{
+              display: flex;
+              flex-direction: column;
+              width:80px;
+              text-align: left;
+            }
           }
           &__body{
             text-align:left;
-            margin-top: 20px;
+            margin-top: 30px;
             border-radius: 12px;
             width:calc(100% - 50px);
             background: #edf1ee;

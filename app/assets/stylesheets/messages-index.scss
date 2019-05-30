@@ -1,0 +1,52 @@
+.groups-messages{
+  text-align: center;
+  background-color: #ff4f02;
+  color:white;
+  margin: 20px 100px;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 30px;
+}
+.search-result{
+  margin:30px auto;
+  width:calc(100% - 100px);
+  background-color: antiquewhite;
+  border-radius: 10px;
+  &__conteiner{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    &__image{
+      margin-left: 20px;
+      margin-right:10px;
+      padding-top: 7px;
+    }
+    &__info{
+      display:flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      font-size:20px;
+      &__name{
+        margin-right: 10px;
+      }
+      &__breed{
+        margin-right: 10px;
+      }
+      &__sex{
+        margin-right: 10px;
+      }
+      &__age{
+        margin-right: 10px;
+      }
+      &__address{}
+    }
+    &__message{
+      margin-right: 20px;
+      .search-dogs-message{
+        text-decoration: none;
+        color:#8B4513;
+        font-weight: bold;
+      }
+    }
+  }
+}

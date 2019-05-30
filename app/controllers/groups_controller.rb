@@ -16,7 +16,6 @@ class GroupsController < ApplicationController
   end
   def search
     @groups =Group.where('name LIKE ? and breed LIKE ? and town LIKE ? and any LIKE ?',"%#{params[:name]}%","%#{params[:breed]}%","%#{params[:town]}%","%#{params[:any]}%")
-
   end
 
   private

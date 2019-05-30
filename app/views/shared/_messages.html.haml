@@ -4,9 +4,17 @@
       .transaction-field
         .user-message
           .user-message__face
-            .wrrap
-              = fa_icon("circle 3x")
-              -# %span "#{@group.messages.user}"
+            .user-message__face__image
+              - if message.user.dogs[0].image.attached?
+                = image_tag message.user.dogs[0].image,size:'50x50'
+              - else
+                = image_tag 'icon_043140_64.png'
+              .user-message__face__image__nickname
+                飼い主:
+                %br #{message.user.nickname}
+              .user-message__face__image__dogname
+                ワンちゃん:
+                %br #{message.user.dogs[0].name}
           .user-message__body
             .user-message__body__text
               = message.content

@@ -1,9 +1,8 @@
 class MessagesController < ApplicationController
 
   def index
-    @groups = Group.where(params[:group_id])
+    @messages = Message.where(user_id: params[:group_id])
     # @messages = Message.@group.find(user_id: current_user.id)
-    # binding.pry
   end
   def new
     # @messages = Message.where('oppo_id', params[:user_id])
@@ -23,7 +22,6 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     if @message.save
       redirect_to new_group_message_path(@group)
-      binding.pry
     else
       redirect_to root_path
     end
