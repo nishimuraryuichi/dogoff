@@ -52,3 +52,4 @@ production:
   database: dogoff_production
   username: dogoff
   password: <%= ENV['DOGOFF_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
