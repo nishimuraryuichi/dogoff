@@ -1,6 +1,7 @@
 .index-main{
   .main-conteiner{
-    background-color:#ffffcc;
+    // background-color:#fffacd;
+    background-color: #663300;
     padding-bottom: 6px;
     .header-content{
       display:flex;
@@ -8,18 +9,12 @@
       align-items: center;
       margin-left:200px;
       height: 70px;
-        .title-name{
-          background-color: #663300;
-          text-decoration: none;
-          color:white;
-          padding:7px;
-          border-radius: 30px;
-        }
       &__left{
         margin-right: 10px;
         .left-text{
           text-decoration: none;
-          color:#ff8c00;
+          // color:#ff8c00;
+          color:white;
           font-weight: bold;
           font-size: 20px;
         }
@@ -28,7 +23,8 @@
         margin-right: 10px;
         .middle-text{
           text-decoration-line: none;
-          color:#ff8c00;
+          color:white;
+          // color:#ff8c00;
           font-weight: bold;
           font-size: 20px;
         }
@@ -36,7 +32,8 @@
       &__right{
         .right-text{
           text-decoration: none;
-          color:#ff8c00;
+          color:white;
+          // color:#ff8c00;
           font-weight: bold;
           font-size: 20px;
         }
@@ -47,6 +44,7 @@
       justify-content:flex-end;
       align-items: flex-end;
       height: 30px;
+      color:white;
       h4{
         margin-right: 5px;
         font-weight: bold;
@@ -54,17 +52,21 @@
       .edit{
         margin-right: 5px;
         text-decoration: none;
-        color:#8B4513;
+        // color:#8B4513;
+        color:white;
+
       }
       .dogs-info{
         margin-right: 5px;
         text-decoration: none;
-        color:#8B4513;
+          color:white;
+          // color:#8B4513;
       }
       .dogs-edit{
         margin-right: 5px;
         text-decoration: none;
-        color:#8B4513;
+          color:white;
+          // color:#8B4513;
       }
       .signout{
         text-decoration: none;
@@ -94,9 +96,12 @@
     }
   }
   .main-top{
+    position: relative;
     &__image{
       text-align:center;
+      position: absolute;
       position: relative;
+      z-index: 10;
       p{
         position: absolute;
         top:50px;
@@ -188,8 +193,11 @@
     }
   }
   .main-footer{
-    background-color:#fffacd;
+    // background-color:#fffacd;
+    background-color: #663300;
     text-align: center;
+    padding:10px 0;
+    color:white;
     &__content{
       &__email{}
       &__article{}

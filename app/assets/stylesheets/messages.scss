@@ -1,3 +1,46 @@
+.search-messages{
+  margin:30px auto;
+  width:calc(100% - 100px);
+  background-color: antiquewhite;
+  border-radius: 10px;
+  &__conteiner{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    &__image{
+      margin-left: 20px;
+      margin-right:10px;
+      padding-top: 7px;
+    }
+    &__info{
+      display:flex;
+      align-content:flex-start;
+      flex-wrap:wrap;
+      font-size:20px;
+      &__name{
+        margin-right: 10px;
+      }
+      &__breed{
+        margin-right: 10px;
+      }
+      &__town{
+        margin-right: 10px;
+      }
+      &__any{
+        margin-right: 10px;
+      }
+    }
+    &__message{
+      margin-right: 30px;
+      .search-groups-message{
+        text-decoration: none;
+        color:#8B4513;
+        font-weight: bold;
+      }
+    }
+  }
+}
 .message{
   padding: 20px;
   background: #fafafa;

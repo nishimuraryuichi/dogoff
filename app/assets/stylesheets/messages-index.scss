@@ -1,13 +1,13 @@
 .groups-messages{
   text-align: center;
-  background-color: #ff4f02;
+  background-color: #663300;
   color:white;
   margin: 20px 100px;
   padding: 10px 0;
   border-radius: 10px;
   font-size: 30px;
 }
-.search-result{
+.search-messages{
   margin:30px auto;
   width:calc(100% - 100px);
   background-color: antiquewhite;
@@ -32,17 +32,16 @@
       &__breed{
         margin-right: 10px;
       }
-      &__sex{
+      &__town{
         margin-right: 10px;
       }
-      &__age{
+      &__any{
         margin-right: 10px;
       }
-      &__address{}
     }
     &__message{
       margin-right: 20px;
-      .search-dogs-message{
+      .search-groups-message{
         text-decoration: none;
         color:#8B4513;
         font-weight: bold;

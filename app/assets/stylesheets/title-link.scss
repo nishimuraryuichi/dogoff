@@ -1,12 +1,15 @@
 .title-link{
   font-size:40px;
-  position: fixed;
-  top:5px;
+  position: absolute;
+  z-index: 20;
   .title-name{
     background-color: #663300;
     text-decoration: none;
     color:white;
     padding:7px;
     border-radius: 30px;
+    position: fixed;
+    margin:5px 0 0 5px;
+    opacity: 0.9;
   }
 }

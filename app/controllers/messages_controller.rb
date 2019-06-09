@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
 
   def index
-    @messages = Message.where(user_id: params[:group_id])
+    @messages = Message.where(user_id: params[:group_id]).select(:group_id).distinct
+    @dogs = Dog.where(user_id: current_user.id)
     # @messages = Message.@group.find(user_id: current_user.id)
   end
   def new
@@ -18,6 +19,7 @@ class MessagesController < ApplicationController
     # else
     #   redirect_to root_path
     # end
+    
     @group = Group.find(params[:group_id])
     @message = @group.messages.new(message_params)
     if @message.save

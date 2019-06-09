@@ -2,27 +2,27 @@
 = render './shared/search-groups'
 .search-result-groups
   - @groups.each do |group|
-    .search-result
-      .search-result__conteiner
-        .search-result__conteiner__image
+    .search-groups
+      .search-groups__conteiner
+        .search-groups__conteiner__image
           - if group.image.attached?
             = image_tag group.image,size:'100x100'
           - else
             = image_tag 'icon_043140_64.png'
-        .search-result__conteiner__info
-          .search-result__conteiner__info__name
+        .search-groups__conteiner__info
+          .search-groups__conteiner__info__name
             = 'グループ名:'
             = group.name
-          .search-result__conteiner__info__breed
+          .search-groups__conteiner__info__breed
             = 'ワンちゃん:'
             = group.breed
-          .search-result__conteiner__info__town
+          .search-groups__conteiner__info__town
             = '地域:'
             = group.town
-          .search-result__conteiner__info__any
+          .search-groups__conteiner__info__any
             = group.any
-        .search-result__conteiner__message
-          - if user_signed_in?
+        .search-groups__conteiner__message
+          - if user_signed_in? && @dogs.present?
             = link_to 'グループに入る',new_group_message_path(group.id), class: 'search-groups-message'
           - else
-            %h2 ログイン後にメッセージが送れます
+            %h2 ログイン後、ワンちゃん情報の登録でメッセージが送れます
