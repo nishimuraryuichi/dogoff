@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   database: dogoff_production
-  username: root
+  username: dogoff
   password: <%= ENV['DOGOFF_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
