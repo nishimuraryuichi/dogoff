@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_10_081910) do
+ActiveRecord::Schema.define(version: 2019_05_11_025757) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -47,22 +47,20 @@ ActiveRecord::Schema.define(version: 2019_06_10_081910) do
     t.string "town", null: false
     t.integer "age"
     t.string "sex"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "room_id"
     t.string "breed", null: false
     t.string "town", null: false
-    t.string "any"
-    t.index ["room_id"], name: "index_groups_on_room_id"
+    t.string "any", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "members", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,19 +77,16 @@ ActiveRecord::Schema.define(version: 2019_06_10_081910) do
     t.string "image"
     t.bigint "group_id"
     t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "room_id"
     t.integer "oppo_id"
-    t.index ["group_id"], name: "index_messages_on_group_id"
-    t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "group_id"
     t.index ["group_id"], name: "index_rooms_on_group_id"
   end
 
@@ -110,23 +105,19 @@ ActiveRecord::Schema.define(version: 2019_06_10_081910) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "sex", null: false
     t.integer "age", null: false
     t.string "nickname", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dogs", "users"
-  add_foreign_key "groups", "rooms"
   add_foreign_key "members", "groups"
   add_foreign_key "members", "users"
-  add_foreign_key "messages", "groups"
-  add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "rooms", "groups"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
