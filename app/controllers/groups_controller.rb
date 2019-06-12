@@ -16,7 +16,9 @@ class GroupsController < ApplicationController
   end
   def search
     @groups =Group.where('name LIKE ? and breed LIKE ? and town LIKE ? and any LIKE ?',"%#{params[:name]}%","%#{params[:breed]}%","%#{params[:town]}%","%#{params[:any]}%")
+    if user_signed_in?
     @dogs = Dog.where(user_id: current_user.id)
+    end
   end
 
   private
