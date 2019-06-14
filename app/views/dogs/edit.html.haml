@@ -22,4 +22,5 @@
       =f.text_field :town ,placeholder: '例 名塩 ここは任意です'
       .dog-info-btn
         = f.submit '更新する', class: 'btn-link',data: {confirm: '編集された内容でよろしいですか？'}
-        = link_to '削除',dog_path(@dogs),class: 'btn-link',method: 'delete',data: {confirm: '本当に削除しますか？'}
+        .dog-info-btn-delete
+          = link_to '削除する',dog_path(@dogs),class: 'btn-link',method: 'delete',data: {confirm: '本当に削除しますか？'}
