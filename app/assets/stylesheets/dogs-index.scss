@@ -4,7 +4,7 @@
     // background-color:#fffacd;
     background-color: #663300;
     padding-bottom: 6px;
-    @media (max-width:735px){
+    @media (max-width:500px){
       display:flex;
       flex-direction: row-reverse;
     }
@@ -109,7 +109,7 @@
       display: none;
     }
   
-    @media (max-width:735px){
+    @media (max-width:500px){
       position: relative;
       .header-content{
         display:none;
