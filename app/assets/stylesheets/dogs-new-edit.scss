@@ -29,9 +29,6 @@
     }
     .dog-info-btn{
       margin:20px 0;
-      .dog-info-btn-delete{
-        margin-top:5px;
-      }
       .btn-link{
         text-decoration: none;
         background-color: #CD853F;
@@ -41,6 +38,9 @@
         border-radius: 10px;
         width:30vw;
         margin:0 auto;
+      }
+      .dog-info-btn-delete{
+        margin-top:5px;
       }
     }
   }
