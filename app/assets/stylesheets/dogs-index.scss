@@ -3,7 +3,7 @@
   .main-conteiner{
     // background-color:#fffacd;
     background-color: #663300;
-    padding-bottom: 6px;
+    padding-bottom: 55px;
     @media (max-width:500px){
       display:flex;
       flex-direction: row-reverse;
@@ -208,9 +208,14 @@
         }
       }
 
+#header{
+  padding: 0 30px 0 0;
+}
 
   #nav-drawer {
     position: relative;
+    width: 70px;
+    top: -17px;
   }
   
   /*チェックボックス等は非表示に*/
@@ -221,28 +226,28 @@
   /*アイコンのスペース*/
   #nav-open {
     display: inline-block;
-    width: 30px;
-    height: 22px;
-    vertical-align: middle;
-    padding-top:55px;
+    position: relative;
   }
   
   /*ハンバーガーアイコンをCSSだけで表現*/
   #nav-open span, #nav-open span:before, #nav-open span:after {
     position: absolute;
-    height: 3px;/*線の太さ*/
-    width: 25px;/*長さ*/
-    border-radius: 3px;
+    height: 5px;/*線の太さ*/
+    width: 40px;/*長さ*/
+    border-radius: 2px;
     background: white;
     display: block;
     content: '';
     cursor: pointer;
   }
+  #nav-open span{
+    top:30px;
+  }
   #nav-open span:before {
-    bottom: -8px;
+    bottom: -10px;
   }
   #nav-open span:after {
-    bottom: -16px;
+    bottom: -20px;
   }
   
   /*閉じる用の薄黒カバー*/
