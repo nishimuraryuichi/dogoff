@@ -1,0 +1,57 @@
+.title-link
+  = link_to 'DogOFF',root_path,class: 'title-name'
+.index-main
+  .main-conteiner
+    .header-content
+      .header-content__left
+        = link_to 'お友達を探す',users_path,class: 'left-text'
+      .header-content__middle
+        = link_to 'グループを探す',groups_path,class: 'middle-text' 
+        = link_to 'グループを作る',new_group_path,class: 'middle-text'
+      .header-content__right
+        - if user_signed_in?
+          = link_to 'メッセージ',group_messages_path(current_user),class: 'right-text' 
+    .header-registration
+      %h4
+        アカウント： #{current_user.nickname}
+      = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
+      = link_to "ワンちゃん情報" ,new_dog_path,class: 'dogs-info'
+      = link_to "ワンちゃん編集",dog_path(current_user),class: 'dogs-edit'
+      = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'signout'
+
+      %h2 現在ログインしていません
+      = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
+      = link_to "新規登録", new_user_registration_path, class: 'header-registration__right'
+
+  
+    -# =fa_icon('bars 3x')
+
+    %body
+      %header
+        #nav-drawer
+          %input#nav-input.nav-unshown{:type => "checkbox"}/
+          %label#nav-open{:for => "nav-input"}
+            %span
+          %label#nav-close.nav-unshown{:for => "nav-input"}
+          #nav-content
+            .header-content2
+              .header-content2__left
+                = link_to 'お友達を探す',users_path,class: 'left-text2'
+              .header-content2__middle
+                = link_to 'グループを探す',groups_path,class: 'middle-text2' 
+                = link_to 'グループを作る',new_group_path,class: 'middle-text2'
+              .header-content2__right
+                - if user_signed_in?
+                  = link_to 'メッセージ',group_messages_path(current_user),class: 'right-text2' 
+            .header-registration2
+              - if user_signed_in?
+                .header-registration2__signin
+                  アカウント： #{current_user.nickname}
+                = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit2'
+                = link_to "ワンちゃん情報" ,new_dog_path,class: 'dogs-info2'
+                = link_to "ワンちゃん編集",dog_path(current_user),class: 'dogs-edit2'
+                = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'signout2'
+              - else
+                .header-registration2__signout 現在ログインしていません
+                = link_to "ログイン", new_user_session_path, class: 'header-registration2__left'
+                = link_to "新規登録", new_user_registration_path, class: 'header-registration2__right'
