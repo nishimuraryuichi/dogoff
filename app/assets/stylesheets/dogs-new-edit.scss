@@ -1,8 +1,6 @@
 .dog-registration{
   text-align: center;
   background-color: #eeeeee;
-  margin: 20px 80px;
-  padding: 10px 0;
   &__title{
     padding:10px;
     font-size: 30px;
@@ -28,7 +26,7 @@
       font-size: 25px;
     }
     .dog-info-btn{
-      margin:20px 0;
+      margin-top:20px;
       .btn-link{
         text-decoration: none;
         background-color: #CD853F;
@@ -41,6 +39,51 @@
       }
       .dog-info-btn-delete{
         margin-top:5px;
+      }
+    }
+  }
+}
+@media(max-width:811px){
+  .dog-registration{
+    text-align: center;
+    background-color: #eeeeee;
+    &__title{
+      padding:10px;
+      font-size: 30px;
+      &__text{
+        border-radius: 10px;
+        background-color: #ff4f02;
+        color:white;
+      }
+    }
+    &__info{
+      .dog-info{
+        margin:10px 0;
+      }
+      input{border-radius: 10px;}
+      .dog-show{
+        background-color: white;
+        color:burlywood;
+        margin:0 20px;
+        font-size:20px;
+      }
+      .dog-house{
+        margin-top:15px;
+        font-size: 25px;
+      }
+      .dog-info-btn{
+        margin-top:20px;
+        .btn-link{
+          text-decoration: none;
+          background-color: #CD853F;
+          color:white;
+          font-size: 25px;
+          padding:5px;
+          border-radius: 10px;
+        }
+        .dog-info-btn-delete{
+          margin-top:5px;
+        }
       }
     }
   }
