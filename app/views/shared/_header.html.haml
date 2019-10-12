@@ -12,16 +12,17 @@
         - if user_signed_in?
           = link_to 'メッセージ',group_messages_path(current_user),class: 'right-text' 
     .header-registration
-      %h4
-        アカウント： #{current_user.nickname}
-      = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
-      = link_to "ワンちゃん情報" ,new_dog_path,class: 'dogs-info'
-      = link_to "ワンちゃん編集",dog_path(current_user),class: 'dogs-edit'
-      = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'signout'
-
-      %h2 現在ログインしていません
-      = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
-      = link_to "新規登録", new_user_registration_path, class: 'header-registration__right'
+      - if user_signed_in?
+        %h4
+          アカウント： #{current_user.nickname}
+        = link_to "アカウント編集",edit_user_registration_path(current_user),class: 'edit'
+        = link_to "ワンちゃん情報" ,new_dog_path,class: 'dogs-info'
+        = link_to "ワンちゃん編集",dog_path(current_user),class: 'dogs-edit'
+        = link_to "ログアウト", destroy_user_session_path, method: :delete,class:'signout'
+      - else
+        %h2 現在ログインしていません
+        = link_to "ログイン", new_user_session_path, class: 'header-registration__left'
+        = link_to "新規登録", new_user_registration_path, class: 'header-registration__right'
 
   
     -# =fa_icon('bars 3x')
